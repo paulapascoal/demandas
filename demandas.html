@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demandas e Sugestões</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mediastyle.css">
+ 
+</head>
+<body>
+
+  <header>
+    <h1>Demandas do Aluno</h1>
+    <nav id="nav-links">
+      <a href="index.html">Início</a>
+      <a href="contato.html">Contato</a>
+      <a href="#" id="logoutBtn">Sair</a>
+    </nav>
+    <button class="hamburger-menu" id="hamburger-btn"> 
+      <span></span> 
+      <span></span> 
+      <span></span> 
+    </button> 
+  </header>
+  
+  <main class="demandas-container">
+    <h2>Nova Demanda ou Sugestão</h2>
+    <div class="info-aluno">
+      <p>Bem-vindo, <span id="alunoNomeDisplay"></span>!</p>
+      <p>Curso: <span id="alunoCursoDisplay"></span></p>
+    </div>
+
+    <form id="demandaForm">
+      <label for="tipoDemanda">Tipo de Demanda</label>
+      <select id="tipoDemanda" name="tipoDemanda" required>
+        <option value="">Selecione o tipo...</option>
+        <option value="Problema na sala/prédio">Problema na sala/prédio</option>
+        <option value="Sugestão de evento">Sugestão de evento</option>
+        <option value="Outro">Outro</option>
+      </select>
+      
+      <label for="titulo">Título</label>
+      <input type="text" id="titulo" name="titulo" placeholder="Ex: Goteira na sala 101" required>
+      
+      <label for="descricao">Descrição Detalhada</label>
+      <textarea id="descricao" name="descricao" placeholder="Descreva o problema ou sugestão com o máximo de detalhes possível." required></textarea>
+      
+      <button type="submit">Enviar Demanda</button>
+    </form>
+  </main>
+
+  <footer>
+    <p>Grau Técnico - Todos os direitos reservados</p>
+  </footer>
+
+  <script src="script.js"></script>
+
+</body>
+</html>

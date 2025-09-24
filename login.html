@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Área do Aluno</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mediastyle.css">
+    
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Área do Aluno</h1>
+            <nav id="nav-links">
+                <a href="index.html">Início</a>
+                <a href="#">Coordenação</a>
+                <a href="#">Financeiro</a>
+                <a href="contato.html">Contato</a>
+            </nav>
+            <button class="hamburger-menu" id="hamburger-btn"> 
+                <span></span> 
+                <span></span> 
+                <span></span> 
+            </button> 
+        </header>
+
+        <div class="login-container">
+            <h2>Acesso do Aluno</h2>
+            <form id="loginForm">
+                <div>
+                    <label for="nome">Nome Completo</label>
+                    <input type="text" id="nome" name="nome" required>
+                </div>
+
+                <label for="curso_select">Selecione seu Curso</label>
+                <select id="curso_select" name="curso_id" required>
+                    <option value="">Selecione um curso...</option>
+                    <optgroup label="Negócios">
+                        <option value="tecnico-em-administracao">Técnico em Administração</option>
+                        <option value="tecnico-em-contabilidade">Técnico em Contabilidade</option>
+                        <option value="tecnico-em-logistica">Técnico em Logística</option>
+                        <option value="tecnico-em-recursos-humanos">Técnico em Recursos Humanos</option>
+                        <option value="tecnico-em-servicos-juridicos">Técnico em Serviços Jurídicos</option>
+                        <option value="tecnico-em-transacoes-imobiliarias">Técnico em Transações Imobiliárias</option>
+                    </optgroup>
+                    <optgroup label="Saúde">
+                        <option value="tecnico-em-analises-clinicas">Técnico em Análises Clínicas</option>
+                        <option value="tecnico-em-enfermagem">Técnico em Enfermagem</option>
+                        <option value="tecnico-em-estetica">Técnico em Estética</option>
+                        <option value="tecnico-em-farmacia">Técnico em Farmácia</option>
+                        <option value="tecnico-em-nutricao-e-dietetica">Técnico em Nutrição e Dietética</option>
+                        <option value="tecnico-em-radiologia">Técnico em Radiologia</option>
+                        <option value="tecnico-em-saude-bucal">Técnico em Saúde Bucal</option>
+                        <option value="especializacao-tecnica-em-enfermagem-do-trabalho">Especialização Técnica em Enfermagem do Trabalho</option>
+                        <option value="especializacao-tecnica-em-instrumentacao-cirurgica">Especialização Técnica em Instrumentação Cirúrgica</option>
+                    </optgroup>
+                    <optgroup label="Tecnologia">
+                        <option value="tecnico-em-desenvolvimento-de-sistemas">Técnico em Desenvolvimento de Sistemas</option>
+                        <option value="tecnico-em-informatica-(ti)">Técnico em Informática (TI)</option>
+                        <option value="tecnico-em-informatica-para-internet">Técnico em Informática para Internet</option>
+                        <option value="tecnico-em-manutencao-e-suporte-em-informatica">Técnico em Manutenção e Suporte em Informática</option>
+                        <option value="tecnico-em-rede-de-computadores">Técnico em Rede de Computadores</option>
+                    </optgroup>
+                    <optgroup label="Indústria e Construção">
+                        <option value="tecnico-em-edificacoes">Técnico em Edificações</option>
+                        <option value="tecnico-em-eletronica">Técnico em Eletrônica</option>
+                        <option value="tecnico-em-eletrotecnica">Técnico em Eletrotécnica</option>
+                        <option value="tecnico-em-mecanica-industrial">Técnico em Mecânica Industrial</option>
+                        <option value="tecnico-em-mecatronica">Técnico em Mecatrônica</option>
+                        <option value="tecnico-em-meio-ambiente">Técnico em Meio Ambiente</option>
+                        <option value="tecnico-em-petroleo-e-gas">Técnico em Petróleo e Gás</option>
+                        <option value="tecnico-em-quimica">Técnico em Química</option>
+                        <option value="tecnico-em-seguranca-do-trabalho">Técnico em Segurança do Trabalho</option>
+                    </optgroup>
+                </select>
+                
+                <button type="submit">Entrar</button>
+            </form>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+    
+   
+</body>
+</html>
