@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const cursoElement = document.getElementById('curso_select');
             const curso = cursoElement.options[cursoElement.selectedIndex].text;
 
+            
             if (nome && curso && curso !== 'Selecione um curso...') {
                 sessionStorage.setItem('alunoNome', nome);
                 sessionStorage.setItem('alunoCurso', curso);
