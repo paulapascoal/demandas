@@ -1,4 +1,3 @@
-// Lógica universal para o menu hambúrguer
 const hamburgerBtn = document.getElementById('hamburger-btn');
 const navLinks = document.getElementById('nav-links');
 
@@ -8,12 +7,9 @@ if (hamburgerBtn && navLinks) {
     });
 }
 
-// Lógica condicional para as páginas específicas
 document.addEventListener('DOMContentLoaded', () => {
-    // Verifica se o formulário de login existe na página atual
     const loginForm = document.getElementById('loginForm');
     if (loginForm) {
-        // Lógica da página de login
         loginForm.addEventListener('submit', function(event) {
             event.preventDefault();
 
@@ -31,15 +27,13 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // Verifica se a seção de demandas existe na página atual
     const demandasContainer = document.querySelector('.demandas-container');
     if (demandasContainer) {
-        // Lógica da página de demandas
         const alunoNome = sessionStorage.getItem('alunoNome');
         const cursoOptionValue = sessionStorage.getItem('alunoCurso');
 
         if (!alunoNome || !cursoOptionValue) {
-            window.location.href = 'login.html'; // Redireciona se não houver dados
+            window.location.href = 'login.html';
             return;
         }
 
@@ -68,4 +62,31 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         }
     }
+
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (event) => {
+        event.preventDefault();
+
+        const nome = document.getElementById('nome').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const mensagem = document.getElementById('mensagem').value.trim();
+
+        if (nome === '' || email === '' || mensagem === '') {
+            alert('Por favor, preencha todos os campos do formulário.');
+            return;
+        }
+
+        const dadosDaDuvida = {
+            nome: nome,
+            email: email,
+            mensagem: mensagem,
+            dataEnvio: new Date().toLocaleString()
+        };
+
+        console.log('Dúvida enviada:', dadosDaDuvida);
+        alert('Sua dúvida foi enviada com sucesso! Em breve entraremos em contato.');
+        contactForm.reset();
+    });
+}
 });
