@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calendário Escolar</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="mediastyle.css">
+  <link rel="shortcut icon" href="image/favicon.ico" type="image/x-icon">
+
+</head>
+<body>
+    <div class="container">
+<header>
+    <h1>Calendário </h1>
+    <nav id="nav-links">
+      <a href="index.html">Inicio</a>
+      <a href="login.html">Alunos</a>
+      <a href="contato.html">Contato</a>
+    </nav>
+    <button class="hamburger-menu" id="hamburger-btn"> 
+      <span></span> 
+      <span></span> 
+      <span></span> 
+    </button> 
+</header>
+    
+
+
+  <main class="calendar-page">
+    
+    <section id="calendar">
+      <h2 class="titulo">Calendário Anual</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Mês</th>
+            <th>Atividades</th>
+            <th>Feriados</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Janeiro</td>
+            <td>
+              - Planejamento Pedagógico<br>
+              - Recepção dos Estudantes<br>
+              - Apresentação do Calendário Escolar
+            </td>
+            <td>01 - Ano Novo</td>
+          </tr>
+          <tr>
+            <td>Fevereiro</td>
+            <td>
+              - Reunião de Pais e Mestres<br>
+              - Início do Ano Letivo<br>
+              - Semana Pedagógica
+            </td>
+            <td>20 - Carnaval</td>
+          </tr>
+          <tr>
+            <td>Março</td>
+            <td>
+              - Feira de Ciências<br>
+              - Projetos Interdisciplinares<br>
+              - Preparação para Avaliações
+            </td>
+            <td>08 - Dia Internacional da Mulher</td>
+          </tr>
+          <tr>
+            <td>Abril</td>
+            <td>
+              - Comemoração da Páscoa<br>
+              - Palestra sobre Cidadania<br>
+              - Atividades Culturais
+            </td>
+            <td>21 - Tiradentes</td>
+          </tr>
+          <tr>
+            <td>Maio</td>
+            <td>
+              - Gincana Escolar<br>
+              - Homenagem ao Dia das Mães<br>
+              - Oficina de Sustentabilidade
+            </td>
+            <td>14 - Dia das Mães</td>
+          </tr>
+          <tr>
+            <td>Junho</td>
+            <td>
+              - Festa Junina<br>
+              - Avaliações do Primeiro Semestre<br>
+              - Encerramento do Semestre
+            </td>
+            <td>24 - Festa Junina</td>
+          </tr>
+          <tr>
+            <td>Julho</td>
+            <td>
+              - Recesso Escolar<br>
+              - Capacitação de Professores
+            </td>
+            <td>---</td>
+          </tr>
+          <tr>
+            <td>Agosto</td>
+            <td>
+              - Semana da Família<br>
+              - Reunião de Pais<br>
+              - Homenagem ao Dia dos Pais
+            </td>
+            <td>13 - Dia dos Pais</td>
+          </tr>
+          <tr>
+            <td>Setembro</td>
+            <td>
+              - Semana da Pátria<br>
+              - Desfile Cívico<br>
+              - Projetos sobre História do Brasil
+            </td>
+            <td>07 - Dia da Independência</td>
+          </tr>
+          <tr>
+            <td>Outubro</td>
+            <td>
+              - Homenagem ao Dia das Crianças<br>
+              - Feira Literária<br>
+              - Apresentações Teatrais
+            </td>
+            <td>12 - Nossa Senhora Aparecida</td>
+          </tr>
+          <tr>
+            <td>Novembro</td>
+            <td>
+              - Semana da Consciência Negra<br>
+              - Feira de Profissões<br>
+              - Preparação para o Encerramento
+            </td>
+            <td>02 - Finados<br>15 - Proclamação da República</td>
+          </tr>
+          <tr>
+            <td>Dezembro</td>
+            <td>
+              - Encerramento do Ano Letivo<br>
+              - Entrega de Boletins<br>
+              - Festa de Natal
+            </td>
+            <td>25 - Natal</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    
+    <section id="events">
+      <h2 class="titulo">Próximos Eventos e Datas Comemorativas</h2>
+      <ul>
+        <li><strong>Janeiro:</strong> Ano Novo (01/01)</li>
+        <li><strong>Fevereiro:</strong> Carnaval (20/02)</li>
+        <li><strong>Março:</strong> Feira de Ciências e Dia Internacional da Mulher (08/03)</li>
+        <li><strong>Abril:</strong> Páscoa e Tiradentes (21/04)</li>
+        <li><strong>Maio:</strong> Dia das Mães (14/05)</li>
+        <li><strong>Junho:</strong> Festa Junina (24/06)</li>
+        <li><strong>Julho:</strong> Recesso Escolar</li>
+        <li><strong>Agosto:</strong> Dia dos Pais (13/08)</li>
+        <li><strong>Setembro:</strong> Dia da Independência do Brasil (07/09)</li>
+        <li><strong>Outubro:</strong> Nossa Senhora Aparecida (12/10)</li>
+        <li><strong>Novembro:</strong> Finados (02/11) e Proclamação da República (15/11)</li>
+        <li><strong>Dezembro:</strong> Natal (25/12)</li>
+      </ul>
+    </section>
+
+      <section id="contact">
+      <h2 class="titulo">Está com dúvidas sobre o calendário? Entre em contato!</h2>
+      <form action="/submit" method="post">
+        <label for="name">Nome:</label>
+        <input type="text" id="name" name="name" required>
+
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="message">Mensagem:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+      <script src="script.js"></script>
+  
+  
+
+  <footer>
+    <p>&copy; 2025 Calendário Escolar. Todos os direitos reservados.</p>
+  </footer>
+   <script src="calendario.js"></script>
+</div>
+</body>
+</html>
+
+
+
