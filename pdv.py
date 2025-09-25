@@ -111,8 +111,22 @@ def abrir_tela_principal():
     main_window.geometry("800x600")
     main_window.config(bg="#1E1E1E")
     
+   
+    try:
+       
+        logo_image = tk.PhotoImage(file="logo.png")
+        
+        
+        logo_image = logo_image.subsample(3, 3)
+        
+        lbl_logo = tk.Label(main_window, image=logo_image, bg="#1E1E1E")
+        lbl_logo.image = logo_image 
+        lbl_logo.pack(pady=10)
+    except tk.TclError:
+        messagebox.showwarning("Aviso", "Não foi possível carregar a imagem 'logo.png'. Verifique se o arquivo está na mesma pasta que o script.")
+
     frame_menu = tk.Frame(main_window, bg="#1E1E1E")
-    frame_menu.pack(pady=50)
+    frame_menu.pack(pady=30)
 
     btn_estoque = tk.Button(frame_menu, text="Estoque de Produtos", width=20, height=4,
                              font=("Segoe UI", 12), bg="#2D2D30", fg="#F0F0F0", relief="flat", command=abrir_estoque)
@@ -138,9 +152,8 @@ def abrir_tela_principal():
 
     btn_sair = tk.Button(main_window, text="Sair", width=25, height=2, font=("Segoe UI", 12),
                           bg="#E53935", fg="#FFFFFF", relief="flat", command=main_window.destroy)
-    btn_sair.pack(pady=30)
+    btn_sair.pack(pady=20)
     main_window.mainloop()
-
 def salvar_alteracoes_estoque(produto, quantidade_entry, validade_entry, tela_estoque):
     try:
         nova_quantidade = int(quantidade_entry.get())

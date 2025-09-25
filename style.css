@@ -27,15 +27,15 @@ nav a:hover {
       text-decoration: underline;
 }
 .carrosel {
-      position: relative;
-      overflow: hidden;
-      height: 250px;
+    position: relative;
+    overflow: hidden;
+    height: 250px;
 }
 .carrosel img {
-      width: 100%;
-      height: 250px;
-      object-fit: cover;
-      display: none;
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    display: none;
 }
 .carrosel img.active {
       display: block;
