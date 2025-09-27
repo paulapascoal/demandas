@@ -60,6 +60,41 @@
     flex-direction: column;
     align-items: center;
   }
+
+  .contato-container {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin: 20px auto;
+    padding: 0 10px;
+  }
+
+  .contato-container iframe {
+    width: 100% !important;
+    max-width: 400px;
+    height: 250px;
+  }
+
+  .contato-info {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  main.calendar-page table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+    min-width: 600px;
+  }
+
+  main.calendar-page table td {
+    white-space: normal;
+  }
+
+  .container {
+    padding: 0 10px;
+    overflow-x: hidden;
+  }
 }
 
 @media screen and (min-width: 769px) {
