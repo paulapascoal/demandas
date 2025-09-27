@@ -396,22 +396,28 @@ def abrir_mesas():
             alternar_status_mesa(mesa['nome'], tela_mesas)
 
     for i, mesa in enumerate(mesas):
-        if mesa['status'] == "Ocupada":
-            cor_status = THEME['ACCENT_THIRD']
-            texto_status = "Ocupada"
-        elif mesa['status'] == "Disponível":
-            cor_status = THEME['ACCENT_SUCCESS']
-            texto_status = "Disponível"
-        elif mesa['status'] == "Reservada":
-            cor_status = THEME['ACCENT_PRIMARY']
-            texto_status = "Reservada"
-
         mesa_card = tk.Frame(frame_grid_mesas, bg=THEME['CARD_BG'], relief="flat", bd=2)
         mesa_card.grid(row=i // 3, column=i % 3, padx=12, pady=12, ipadx=8, ipady=8)
 
         tk.Label(mesa_card, text=mesa['nome'], font=("Segoe UI", 14, "bold"), fg=THEME['TEXT'], bg=THEME['CARD_BG']).pack(pady=6, padx=12)
-        tk.Label(mesa_card, text=texto_status, font=FONT, fg=cor_status, bg=THEME['CARD_BG']).pack(pady=4, padx=12)
-
+        
+        if mesa['status'] == "Ocupada":
+            cor_status = THEME['ACCENT_THIRD']
+            texto_status = "Ocupada"
+            tk.Label(mesa_card, text=texto_status, font=FONT, fg=cor_status, bg=THEME['CARD_BG']).pack(pady=(0, 4), padx=12)
+        elif mesa['status'] == "Disponível":
+            cor_status = THEME['ACCENT_SUCCESS']
+            texto_status = "Disponível"
+            tk.Label(mesa_card, text=texto_status, font=FONT, fg=cor_status, bg=THEME['CARD_BG']).pack(pady=(0, 4), padx=12)
+        elif mesa['status'] == "Reservada":
+            cor_status = THEME['ACCENT_PRIMARY']
+            texto_status = "Reservada"
+            nome_reserva = mesa.get('reserva_nome', '')
+            
+            tk.Label(mesa_card, text=texto_status, font=FONT, fg=cor_status, bg=THEME['CARD_BG']).pack(pady=(0, 2), padx=12)
+            if nome_reserva:
+                 tk.Label(mesa_card, text=f"Cliente: {nome_reserva}", font=("Segoe UI", 10), fg=THEME['TEXT'], bg=THEME['CARD_BG']).pack(pady=(0, 6), padx=12)
+        
         mesa_card.bind("<Button-1>", lambda event, m=mesa: on_click(m))
         for child in mesa_card.winfo_children():
             child.bind("<Button-1>", lambda event, m=mesa: on_click(m))
@@ -469,7 +475,12 @@ def abrir_reserva():
                     mesa['status'] = "Reservada"
                     mesa['reserva_nome'] = nome_cliente
                     mesa['reserva_tel'] = telefone_cliente
-                    messagebox.showinfo("Sucesso", f"Mesa {mesa_selecionada} reservada para {nome_cliente}.")
+                    
+                    messagebox.showinfo(
+                        "Reserva Confirmada", 
+                        f"Reserva para {nome_cliente} na {mesa_selecionada} confirmada com sucesso!\n\nOs dados da reserva foram enviados ao cliente."
+                    )
+                    
                     tela_reserva.destroy()
                     abrir_mesas()
                 else:
@@ -703,24 +714,27 @@ def abrir_caixa():
 def iniciar_app():
     global login_window, entry_username, entry_password, logo_image_tk
     
+    login_window = tk.Tk()
+    login_window.title("Login Cobra Demandas")
+    login_window.geometry("420x520")
+    login_window.config(bg=THEME['BG'])
+    
     try:
         img_raw = Image.open("logo.png")
         img_resized = img_raw.resize((150, 150), Image.LANCZOS)
         logo_image_tk = ImageTk.PhotoImage(img_resized)
     except FileNotFoundError:
-        messagebox.showerror("Erro de Arquivo", "Arquivo 'logo.jpg' não encontrado. Certifique-se de que ele está na mesma pasta que o script.")
+        messagebox.showerror("Erro de Arquivo", "Arquivo 'logo.png' não encontrado. Certifique-se de que ele está na mesma pasta que o script.")
+        login_window.destroy()
         return
     except ImportError:
         messagebox.showerror("Erro de Biblioteca", "A biblioteca 'Pillow' (PIL) não está instalada. Instale com 'pip install Pillow'.")
+        login_window.destroy()
         return
     except Exception as e:
         messagebox.showerror("Erro de Imagem", f"Não foi possível carregar a imagem: {e}")
+        login_window.destroy()
         return
-
-    login_window = tk.Tk()
-    login_window.title("Login Cobra Demandas")
-    login_window.geometry("420x520")
-    login_window.config(bg=THEME['BG'])
 
     lbl_logo = tk.Label(login_window, image=logo_image_tk, bg=THEME['BG'])
     lbl_logo.pack(pady=10)
