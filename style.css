@@ -57,60 +57,51 @@ nav a:hover {
       margin: 0 0 10px;
       color: #333;
 }
-
 .news-card.card-tecnicos {
       border-left: 6px solid #078C03;
     }
-    .news-card.card-tecnicos h3 {
+.news-card.card-tecnicos h3 {
       color: #078C03;
     }
-    .news-card.card-tecnicos p{
+.news-card.card-tecnicos p{
           color: black;
     }
-
-
-    .news-card.card-profissionalizantes {
+.news-card.card-profissionalizantes {
       border-left: 6px solid #062A73;
     }
-    .news-card.card-profissionalizantes h3 {
+.news-card.card-profissionalizantes h3 {
       color: #062A73;
     }
-
-    .news-card.card-faculdade {
+.news-card.card-faculdade {
       border-left: 6px solid #F27405;
     }
-    .news-card.card-faculdade h3 {
+.news-card.card-faculdade h3 {
       color: #F27405;
     }
-
-    .news-card a {
+.news-card a {
       text-decoration: none;
       color: black;
   }
-
-  .news-card.card-tecnicos:hover {
+.news-card.card-tecnicos:hover {
       border-left: 6px solid #078C03;
       background-color: #a8e5a5;
 ;
     }
-    .news-card.card-tecnicos:hover h3 {
+.news-card.card-tecnicos:hover h3 {
       color: #078C03;
     }
-
-
-    .news-card.card-profissionalizantes:hover {
+.news-card.card-profissionalizantes:hover {
       border-left: 6px solid #062A73;
       background-color: #9CB6D9;
     }
-    .news-card.card-profissionalizantes:hover h3 {
+.news-card.card-profissionalizantes:hover h3 {
       color: #062A73;
     }
-
-    .news-card.card-faculdade:hover {
+.news-card.card-faculdade:hover {
       border-left: 6px solid #F27405;
       background-color: #ffb96f;
     }
-    .news-card.card-faculdade:hover h3 {
+.news-card.card-faculdade:hover h3 {
       color: #F27405;
     }
 .logotipo{
@@ -146,19 +137,17 @@ nav a:hover {
 .contato-link:hover {
       text-decoration: underline;
 }
-
 .contato{
         font-weight: bold;
         font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         font-size: 1.2em;
 }
-
 .container {
       max-width: 1200px;
       margin: 0 auto;
       padding: 0 15px;
     }
-     .demandas-container {
+.demandas-container {
       background-color: #fff;
       padding: 30px;
       border-radius: 8px;
@@ -167,28 +156,28 @@ nav a:hover {
       max-width: 600px;
       margin: 20px auto;
     }
-    .demandas-container h2 {
+.demandas-container h2 {
       color: #006400;
       text-align: center;
       margin-bottom: 20px;
     }
-    .demandas-container label {
+.demandas-container label {
       display: block;
       margin-bottom: 5px;
       font-weight: bold;
     }
-    .demandas-container input, .demandas-container select, .demandas-container textarea {
+.demandas-container input, .demandas-container select, .demandas-container textarea {
       width: calc(100% - 20px);
       padding: 10px;
       margin-bottom: 20px;
       border: 1px solid #ccc;
       border-radius: 5px;
     }
-    .demandas-container textarea {
+.demandas-container textarea {
       resize: vertical;
       min-height: 150px;
     }
-    .demandas-container button {
+.demandas-container button {
       width: 100%;
       padding: 12px;
       background-color: #006400;
@@ -198,16 +187,16 @@ nav a:hover {
       cursor: pointer;
       font-size: 18px;
     }
-    .demandas-container button:hover {
+.demandas-container button:hover {
       background-color: #004d00;
     }
-    .info-aluno {
+.info-aluno {
       background-color: #e6f7e6;
       border-left: 5px solid #006400;
       padding: 10px;
       margin-bottom: 20px;
     }
-      .login-container {
+.login-container {
         background-color: #fff;
         padding: 40px;
         border-radius: 8px;
@@ -217,25 +206,25 @@ nav a:hover {
         text-align: center;
         margin: 50px auto;
       }
-      .login-container h2 {
+.login-container h2 {
         margin-bottom: 20px;
         color: #006400;
       }
-      .login-container label {
+.login-container label {
         display: block;
         text-align: left;
         margin-bottom: 5px;
         font-weight: bold;
         color: #333;
       }
-      .login-container input, .login-container select {
+.login-container input, .login-container select {
         width: calc(100% - 20px);
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
       }
-      .login-container button {
+.login-container button {
         width: 100%;
         padding: 10px;
         background-color: #006400;
@@ -246,11 +235,10 @@ nav a:hover {
         font-size: 16px;
         font-weight: bold;
       }
-      .login-container button:hover {
+.login-container button:hover {
         background-color: #004d00;
       }
-
-      main.calendar-page {
+main.calendar-page {
     background-color: #fff;
     padding: 30px;
     border-radius: 8px;
@@ -258,59 +246,49 @@ nav a:hover {
     max-width: 900px;
     margin: 20px auto;
 }
-
 main.calendar-page h2 {
     color: #006400;
     text-align: center;
     margin-bottom: 20px;
 }
-
 main table {
     width: 100%;
     border-collapse: collapse;
     margin-top: 20px;
     margin-bottom: 30px;
 }
-
 main table th,
 main table td {
     padding: 12px;
     text-align: left;
     border: 1px solid #ddd;
 }
-
 main table th {
     background-color: #006400;
     color: #fff;
     font-weight: bold;
 }
-
 main table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
-
 main table tbody tr:hover {
     background-color: #f1f1f1;
 }
-
 #contact form {
     background-color: #f9f9f9;
     padding: 20px;
     border-radius: 8px;
     box-shadow: none;
 }
-
 #contact h2 {
     color: #006400;
 }
-
 #contact label {
     font-weight: bold;
     color: #333;
     margin-top: 15px;
     display: block;
 }
-
 #contact input, #contact textarea {
     width: 100%;
     padding: 10px;
@@ -318,7 +296,6 @@ main table tbody tr:hover {
     border-radius: 5px;
     margin-top: 5px;
 }
-
 #contact button {
     width: 100%;
     padding: 12px;
@@ -331,7 +308,6 @@ main table tbody tr:hover {
     font-weight: bold;
     margin-top: 20px;
 }
-
 #contact button:hover {
     background-color: #004d00;
 }
