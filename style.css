@@ -252,6 +252,7 @@ main.calendar-page h2 {
     color: #006400;
     text-align: center;
     margin-bottom: 20px;
+    
 }
 main table {
     width: 100%;
@@ -270,6 +271,15 @@ main table th {
     color: #fff;
     font-weight: bold;
 }
+
+main table th{
+      background-color: #006400;
+      color: #fff;
+      font-weight: bold;
+      position: sticky;
+      top: 60px; 
+      z-index: 5; 
+}
 main table tbody tr:nth-child(even) {
     background-color: #f9f9f9;
 }
@@ -277,9 +287,11 @@ main table tbody tr:hover {
     background-color: #f1f1f1;
 }
 #contact form {
-        background-color: #f9f9f9;
-   
-    box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+      background-color: #f9f9f9;  
+      box-shadow: 0px 7px 7px rgba(0, 0, 0, 0.192);
+      padding: 12px;
+      border-top-right-radius: 32px;
+      border-bottom-left-radius: 19px;
 }
 #contact h2 {
     color: #006400;
@@ -296,8 +308,7 @@ main table tbody tr:hover {
       border: 1px solid #ccc;
       border-radius: 5px;
       margin-top: 5px;
-    
-    box-sizing: border-box;
+      box-sizing: border-box;
 }
 #contact button {
     width: 100%;

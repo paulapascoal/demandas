@@ -81,21 +81,27 @@
   }
 
   main.calendar-page table {
-    display: block;
-    overflow-x: auto;
-    white-space: nowrap;
-    min-width: 600px;
+    width: 100%;
+    display: table;
+
+
   }
 
-  main.calendar-page table td {
+  main.calendar-page table th, main.calendar-page table td {
     white-space: normal;
+    word-break: break-word;
+    font-size: 0.8em;
+    padding: 8px;
   }
 
   .container {
     padding: 0 10px;
     overflow-x: hidden;
   }
+  
 }
+
+
 
 @media screen and (min-width: 769px) {
 
