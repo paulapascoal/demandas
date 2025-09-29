@@ -276,7 +276,6 @@ main table th{
       background-color: #006400;
       color: #fff;
       font-weight: bold;
-      position: sticky;
       top: 60px; 
       z-index: 5; 
 }
