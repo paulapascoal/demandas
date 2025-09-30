@@ -56,6 +56,9 @@ nav a:hover {
       border-radius: 8px;
       border-left: 6px solid #fff;
       box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      text-decoration: none;
+      color: black;
+      display: block;
 }
 .news-card h3 {
       margin: 0 0 10px;
