@@ -9,6 +9,17 @@ import locale
 import platform
 from PIL import Image, ImageTk
 
+try:
+    if platform.system() == "Windows":
+        locale.setlocale(locale.LC_ALL, 'Portuguese_Brazil.1252')
+    else:
+        locale.setlocale(locale.LC_ALL, 'pt_BR.UTF-8')
+except locale.Error:
+    try:
+        locale.setlocale(locale.LC_ALL, 'pt_BR')
+    except locale.Error:
+        pass
+
 THEME = {
     'BG': '#141414',
     'CARD_BG': '#1F1F1F',
@@ -181,12 +192,100 @@ def salvar_alteracoes_estoque(produto, quantidade_entry, validade_entry, tela_es
     except ValueError:
         messagebox.showerror("Erro", "A quantidade deve ser um número válido.")
 
+def adicionar_produto(tela_estoque):
+    tela_adicionar = tk.Toplevel(tela_estoque)
+    tela_adicionar.title("Adicionar Novo Produto")
+    tela_adicionar.geometry("380x350")
+    tela_adicionar.config(bg=THEME['BG'])
+    tela_adicionar.transient(tela_estoque)
+    tela_adicionar.grab_set()
+
+    frame_add = tk.Frame(tela_adicionar, bg=THEME['CARD_BG'], padx=15, pady=15)
+    frame_add.pack(padx=10, pady=10, fill=tk.BOTH, expand=True)
+
+    tk.Label(frame_add, text="Nome do Produto:", font=FONT, fg=THEME['TEXT'], bg=THEME['CARD_BG']).grid(row=0, column=0, pady=5, padx=5, sticky='w')
+    entry_nome = tk.Entry(frame_add, font=FONT, bg=THEME['PAPER'], fg=THEME['TEXT'], relief="flat")
+    entry_nome.grid(row=0, column=1, pady=5, padx=5, sticky='ew')
+
+    tk.Label(frame_add, text="Preço (R$):", font=FONT, fg=THEME['TEXT'], bg=THEME['CARD_BG']).grid(row=1, column=0, pady=5, padx=5, sticky='w')
+    entry_preco = tk.Entry(frame_add, font=FONT, bg=THEME['PAPER'], fg=THEME['TEXT'], relief="flat")
+    entry_preco.grid(row=1, column=1, pady=5, padx=5, sticky='ew')
+
+    tk.Label(frame_add, text="Quantidade Inicial:", font=FONT, fg=THEME['TEXT'], bg=THEME['CARD_BG']).grid(row=2, column=0, pady=5, padx=5, sticky='w')
+    entry_quantidade = tk.Entry(frame_add, font=FONT, bg=THEME['PAPER'], fg=THEME['TEXT'], relief="flat")
+    entry_quantidade.grid(row=2, column=1, pady=5, padx=5, sticky='ew')
+
+    tk.Label(frame_add, text="Validade (dd/mm/aaaa):", font=FONT, fg=THEME['TEXT'], bg=THEME['CARD_BG']).grid(row=3, column=0, pady=5, padx=5, sticky='w')
+    entry_validade = tk.Entry(frame_add, font=FONT, bg=THEME['PAPER'], fg=THEME['TEXT'], relief="flat")
+    entry_validade.grid(row=3, column=1, pady=5, padx=5, sticky='ew')
+
+    def confirmar_adicao():
+        nome = entry_nome.get().strip()
+        preco_str = entry_preco.get().replace(',', '.')
+        quantidade_str = entry_quantidade.get()
+        validade = entry_validade.get().strip()
+
+        if not nome or not preco_str or not quantidade_str or not validade:
+            messagebox.showerror("Erro", "Todos os campos devem ser preenchidos.")
+            return
+
+        try:
+            preco = float(preco_str)
+            quantidade = int(quantidade_str)
+            if preco <= 0 or quantidade < 0:
+                raise ValueError
+        except ValueError:
+            messagebox.showerror("Erro", "Preço deve ser um valor positivo e Quantidade um número inteiro não negativo.")
+            return
+        
+        if any(p['nome'].lower() == nome.lower() for p in produtos_estoque):
+            messagebox.showerror("Erro", f"O produto '{nome}' já está no estoque.")
+            return
+
+        novo_produto = {
+            "nome": nome,
+            "preço": preco,
+            "quantidade": quantidade,
+            "validade": validade
+        }
+        
+        produtos_estoque.append(novo_produto)
+        produtos_estoque.sort(key=lambda x: x['nome'])
+        messagebox.showinfo("Sucesso", f"Produto '{nome}' adicionado ao estoque.")
+        tela_adicionar.destroy()
+        tela_estoque.destroy()
+        abrir_estoque()
+
+    btn_confirmar = tk.Button(frame_add, text="Adicionar Produto", font=FONT_BOLD, bg=THEME['ACCENT_SUCCESS'], fg=THEME['TEXT'], relief="flat", command=confirmar_adicao)
+    btn_confirmar.grid(row=4, column=0, columnspan=2, pady=15, sticky='ew')
+
+    btn_cancelar = tk.Button(frame_add, text="Cancelar", font=FONT_BOLD, bg=THEME['DANGER'], fg=THEME['TEXT'], relief="flat", command=tela_adicionar.destroy)
+    btn_cancelar.grid(row=5, column=0, columnspan=2, pady=5, sticky='ew')
+
+def remover_produto(produto, tela_estoque):
+    if messagebox.askyesno("Confirmar Remoção", f"Tem certeza que deseja remover o produto '{produto['nome']}' do estoque?"):
+        global produtos_estoque
+        produtos_estoque = [p for p in produtos_estoque if p['nome'] != produto['nome']]
+        messagebox.showinfo("Sucesso", f"Produto '{produto['nome']}' removido do estoque.")
+        tela_estoque.destroy()
+        abrir_estoque()
+
 
 def abrir_estoque():
     tela_estoque = tk.Toplevel(main_window)
     tela_estoque.title("Estoque de Produtos")
-    tela_estoque.geometry("760x600")
+    tela_estoque.geometry("860x600")
     tela_estoque.config(bg=THEME['BG'])
+
+    frame_botoes_acao = tk.Frame(tela_estoque, bg=THEME['BG'])
+    frame_botoes_acao.pack(fill=tk.X, padx=10, pady=(10, 5))
+
+    btn_adicionar = tk.Button(frame_botoes_acao, text="Adicionar Novo Produto", width=22, height=2, font=FONT_BOLD, bg=THEME['ACCENT_PRIMARY'], fg=THEME['TEXT'], relief="flat", command=lambda: adicionar_produto(tela_estoque))
+    btn_adicionar.pack(side=tk.LEFT, padx=5)
+
+    btn_voltar_topo = tk.Button(frame_botoes_acao, text="Voltar", width=18, height=2, font=FONT_BOLD, bg=THEME['DANGER'], fg=THEME['TEXT'], relief="flat", command=tela_estoque.destroy)
+    btn_voltar_topo.pack(side=tk.RIGHT, padx=5)
+
 
     canvas = tk.Canvas(tela_estoque, bg=THEME['BG'], highlightthickness=0)
     scrollbar = tk.Scrollbar(tela_estoque, orient="vertical", command=canvas.yview)
@@ -206,13 +305,13 @@ def abrir_estoque():
     scrollbar.pack(side="right", fill="y", padx=(0,10), pady=10)
 
     header_frame = tk.Frame(scrollable_frame, bg=THEME['CARD_BG'])
-    header_frame.pack(fill=tk.X, pady=(10,5))
+    header_frame.pack(fill=tk.X, pady=(10,5), padx=8)
 
     tk.Label(header_frame, text="Produto", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=22, anchor='w').grid(row=0, column=0, padx=5)
     tk.Label(header_frame, text="Preço", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=10, anchor='w').grid(row=0, column=1, padx=5)
     tk.Label(header_frame, text="Quantidade", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=14, anchor='w').grid(row=0, column=2, padx=5)
-    tk.Label(header_frame, text="Validade", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=12, anchor='w').grid(row=0, column=3, padx=5)
-    tk.Label(header_frame, text="", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=12).grid(row=0, column=4, padx=5)
+    tk.Label(header_frame, text="Validade", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=14, anchor='w').grid(row=0, column=3, padx=5)
+    tk.Label(header_frame, text="Ações", font=FONT_BOLD, fg=THEME['TEXT'], bg=THEME['CARD_BG'], width=24).grid(row=0, column=4, columnspan=2, padx=5)
 
     for i, produto in enumerate(produtos_estoque):
         preco_formatado = f"R${produto['preço']:.2f}".replace('.', ',')
@@ -231,10 +330,11 @@ def abrir_estoque():
         validade_entry.grid(row=0, column=3, padx=5)
 
         btn_salvar = tk.Button(row_frame, text="Salvar", font=("Segoe UI", 10, "bold"), bg=THEME['ACCENT_SUCCESS'], fg=THEME['TEXT'], relief="flat", command=lambda p=produto, q=quantidade_entry, v=validade_entry, t=tela_estoque: salvar_alteracoes_estoque(p, q, v, t))
-        btn_salvar.grid(row=0, column=4, padx=10)
+        btn_salvar.grid(row=0, column=4, padx=(5, 2))
+        
+        btn_remover = tk.Button(row_frame, text="Remover", font=("Segoe UI", 10, "bold"), bg=THEME['DANGER'], fg=THEME['TEXT'], relief="flat", command=lambda p=produto, t=tela_estoque: remover_produto(p, t))
+        btn_remover.grid(row=0, column=5, padx=(2, 5))
 
-    btn_voltar = tk.Button(tela_estoque, text="Voltar", width=18, height=2, font=FONT_BOLD, bg=THEME['DANGER'], fg=THEME['TEXT'], relief="flat", command=tela_estoque.destroy)
-    btn_voltar.pack(pady=12)
 
 def abrir_relatorios():
     tela_relatorios = tk.Toplevel(main_window)
