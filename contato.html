@@ -1,185 +1,53 @@
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contato</title>
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="mediastyle.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato</title>
+ <link rel="stylesheet" href="style.css">
+ <link rel="stylesheet" href="mediastyle.css">
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
 </head>
 <body>
-  <div class="container">
+    <div class="container">
 <header>
     <h1>Contato </h1>
     <nav id="nav-links">
       <a href="index.html">Inicio</a>
       <a href="login.html">Área do Aluno</a>
       <a href="calendario.html">Calendário</a>
-      <a href="contato.html">Contato</a>
     </nav>
-    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação">
+    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
 </header>
-  <div>
-    <h1>Grau Técnico Belo Horizonte Centro: Administração, Enfermagem e Radiologia</h1>
-  </div>
-<div>
-    <h1>Informações do Grau Técnico Belo Horizonte Centro</h1>
-  </div>
-  <div class="contato-container">
-    <div class="contato-info">
-      <div class="contato-item">
-        <a href="tel:+553125362280" class="contato-link">
-          <img class="logotipo" src="imagem/telefone.png" alt="Telefone">
-          <p>(31) 2536-2280</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://wa.me/5531996709645" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/whatsapp.png" alt="WhatsApp"> 
-          <p>(31) 9 9670-9645</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="mailto:bh-centrocomercia@grautecnico.com.br" class="contato-link">
-          <img class="logotipo" src="imagem/email.png" alt="E-mail"> 
-          <p>bh-centrocomercia@grautecnico.com.br</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/localizacao.png" alt="Localização"> 
-          <p>Rua dos Goitacazes, 15, (esquina com rua da Bahia), Centro, Belo Horizonte, MG 30190-050</p>
-        </span>
-      </div>
-      <div class="contato-item">
-        <a href="http://www.facebook.com/grautecnicobh" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/facebook.png" alt="Facebook">
-          <p>http://www.facebook.com/grautecnicobh</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://www.instagram.com/grautecnico_bh" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/instagram.png" alt="Instagram">
-          <p>https://www.instagram.com/grautecnico_bh</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/cnpj.png" alt="CNPJ">
-          <p>21.520.081/0001-20</p>
-        </span>
-      </div>
+  <main class="calendar-page">
+    <section id="contact">
+      <h2 class="titulo">Está com dúvidas sobre o calendário? Entre em contato!</h2>
+      <form id="contact-form" action="/submit" method="post">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="name" required>
+        <label for="email">E-mail:</label>
+        <input type="email" id="email" name="email" required>
+        <label for="mensagem">Mensagem:</label>
+        <textarea id="mensagem" name="message" rows="4" required></textarea>
+        <button type="submit">Enviar Dúvida</button>
+      </form>
+    </section>
+  </main>
+    <script src="script.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.021608250299!2d-43.93988282514977!3d-19.9234942381053!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa699e444f8fe55%3A0xc161a92190dd6223!2sGrau%20T%C3%A9cnico%20Belo%20Horizonte%20Centro%3A%20Administra%C3%A7%C3%A3o%2C%20Enfermagem%20e%20Radiologia!5e0!3m2!1spt-BR!2sbr!4v1759091787994!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-
-     <div>
-    <h1>Grau Técnico Belo Horizonte Barreiro: Administração, Enfermagem e Radiologia</h1>
-  </div>
-  <div class="contato-container">
-    <div class="contato-info">
-      <div class="contato-item">
-        <a href="tel:+553132673131" class="contato-link">
-          <img class="logotipo" src="imagem/telefone.png" alt="Telefone">
-          <p>(31) 3267-3131</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://wa.me/5531996663100" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/whatsapp.png" alt="WhatsApp"> 
-          <p>(31) 9 9666-3100</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="mailto:bh-barreiro@grautecnico.com.br" class="contato-link">
-          <img class="logotipo" src="imagem/email.png" alt="E-mail"> 
-          <p>bh-barreiro@grautecnico.com.br</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/localizacao.png" alt="Localização"> 
-          <p>Avenida Afonso Vaz de Melo, 387, Barreiro, Belo Horizonte, MG 30640-070</p>
-        </span>
-      </div>
-      <div class="contato-item">
-        <a href="https://www.facebook.com/grautecnicobarreiro" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/facebook.png" alt="Facebook">
-          <p>https://www.facebook.com/grautecnicobarreiro</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://www.instagram.com/grautecnicobarreiro" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/instagram.png" alt="Instagram">
-          <p>https://www.instagram.com/grautecnicobarreiro</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/cnpj.png" alt="CNPJ">
-          <p>31.126.227/0001-01</p>
-        </span>
-      </div>
-    
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
     </div>
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3749.831092015376!2d-44.02124812514807!3d-19.973604439667092!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6bd16697427c1%3A0x82a6a5e0dd951bff!2sGrau%20T%C3%A9cnico%20Belo%20Horizonte%20Barreiro%3A%20Administra%C3%A7%C3%A3o%2C%20Enfermagem%20e%20Radiologia!5e0!3m2!1spt-BR!2sbr!4v1759091901314!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-  <div>
-    <h1>Grau Técnico Belo Horizonte Alípio de Melo: Administração, Enfermagem e Radiologia</h1>
-  </div>
-  <div class="contato-info">
-      <div class="contato-item">
-        <a href="tel:+553133700202" class="contato-link">
-          <img class="logotipo" src="imagem/telefone.png" alt="Telefone">
-          <p>(31) 3370-0202</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://wa.me/5531971916181" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/whatsapp.png" alt="WhatsApp"> 
-          <p>(31) 9 7191-6181</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="mailto:bhalipio@grautecnico.com.br" class="contato-link">
-          <img class="logotipo" src="imagem/email.png" alt="E-mail"> 
-          <p>bhalipio@grautecnico.com.br</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/localizacao.png" alt="Localização"> 
-          <p>Av. Abílio Machado, 2991, Alípio de Melo, Belo Horizonte, MG 00000-000</p>
-        </span>
-      </div>
-      <div class="contato-item">
-        <a href="https://www.facebook.com/grautecnicobhalipiodemelo" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/facebook.png" alt="Facebook">
-          <p>https://www.facebook.com/grautecnicobhalipiodemelo</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <a href="https://www.instagram.com/grautecnicoalipiodemelo" class="contato-link" target="_blank">
-          <img class="logotipo" src="imagem/instagram.png" alt="Instagram">
-          <p>https://www.instagram.com/grautecnicoalipiodemelo</p>
-        </a>
-      </div>
-      <div class="contato-item">
-        <span class="contato-link">
-          <img class="logotipo" src="imagem/cnpj.png" alt="CNPJ">
-          <p>40.853.875/0001-50</p>
-        </span>
-      </div>
-    </div>
-    </div>
-   <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3751.6844869193524!2d-44.01124742515069!3d-19.895540437235663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xa6971c88e7c6e5%3A0x4c7caa4c0cfde97b!2sGrau%20T%C3%A9cnico%20Belo%20Horizonte%20Al%C3%ADpio%20de%20Melo%3A%20Administra%C3%A7%C3%A3o%2C%20Enfermagem%20e%20Radiologia!5e0!3m2!1spt-BR!2sbr!4v1759091937251!5m2!1spt-BR!2sbr" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-  </div>
-</div>
-<script src="script.js"></script>
 </body>
 </html>

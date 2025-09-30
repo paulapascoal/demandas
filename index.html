@@ -10,7 +10,6 @@
   <style>
   </style>
 </head>
-
 <body>
  <div class="container">
 <header>
@@ -20,14 +19,14 @@
       <a href="calendario.html">Calendário</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação">
+    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
     </button>
 </header>
   <div class ="carrosel">
-    <img   src="imagem/mural.png" alt="Notícia 1" class="active">
+    <img src="imagem/mural.png" alt="Mural de avisos com o título Grau Técnico, com notícias sobre cursos técnicos, profissionalizantes e faculdade." class="active">
   </div>
   <section class="news-section">
     <div class="news-card card-tecnicos">
@@ -48,10 +47,19 @@
     </div>
   </section>
   <footer>
-    <p class="contato">Contato:</p> <p> ouvidorianacional@graueducacional.com.br | (31)2536-2280</p>
-    <p class="contato">© 2025 Grau Técnico - Todos os direitos reservados</p>
+    <p class="contato">Contato:</p> <p>(31) 2536-2280</p>
   </footer>
-   <script src="script.js"></script>
- </div>
+  <script src="script.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    </div>
 </body>
 </html>

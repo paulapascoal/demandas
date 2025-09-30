@@ -1,10 +1,7 @@
 @charset 'UTF-8';
-
 *, *::before, *::after {
   box-sizing: border-box;
 }
-
-
 body {
       font-family: Arial, sans-serif;
       margin: 0;
@@ -173,9 +170,7 @@ nav a:hover {
       margin-bottom: 5px;
       font-weight: bold;
     }
-
 .demandas-container input, .demandas-container select, .demandas-container textarea {
-      
       width: 100%; 
       padding: 10px;
       margin-bottom: 20px;
@@ -227,7 +222,6 @@ nav a:hover {
         color: #333;
         width: 100%;
       }
-
 .login-container input, .login-container select {
          width: 100%;
         padding: 10px;
@@ -281,7 +275,6 @@ main table th {
     color: #fff;
     font-weight: bold;
 }
-
 main table th{
       background-color: #006400;
       color: #fff;
@@ -340,4 +333,14 @@ footer {
       text-align: center;
       padding: 15px;
       margin-top: 20px;
+}
+a:focus,
+button:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    outline: 4px solid #FF9800;
+    outline-offset: 3px;
+    border-radius: 4px; 
 }

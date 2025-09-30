@@ -16,13 +16,12 @@
                 <a href="calendario.html">Calendário</a>
                 <a href="contato.html">Contato</a>
             </nav>
-            <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação">
+            <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
         </header>
-
         <div class="login-container">
             <h2>Acesso do Aluno</h2>
             <form id="loginForm">
@@ -30,7 +29,6 @@
                     <label for="nome">Nome Completo</label>
                     <input type="text" id="nome" name="nome" required>
                 </div>
-
                 <label for="curso_select">Selecione seu Curso</label>
                 <select id="curso_select" name="curso_id" required>
                     <option value="">Selecione um curso...</option>
@@ -47,16 +45,14 @@
                         <option value="tecnico-em-enfermagem">Técnico em Enfermagem</option>
                         <option value="tecnico-em-estetica">Técnico em Estética</option>
                         <option value="tecnico-em-farmacia">Técnico em Farmácia</option>
-                        <option value="tecnico-em-nutricao-e-dietetica">Técnico em Nutrição e Dietética</option>
+                        <option value="tecnico-em-podologia">Técnico em Podologia</option>
                         <option value="tecnico-em-radiologia">Técnico em Radiologia</option>
                         <option value="tecnico-em-saude-bucal">Técnico em Saúde Bucal</option>
-                        <option value="especializacao-tecnica-em-enfermagem-do-trabalho">Especialização Técnica em Enfermagem do Trabalho</option>
-                        <option value="especializacao-tecnica-em-instrumentacao-cirurgica">Especialização Técnica em Instrumentação Cirúrgica</option>
                     </optgroup>
-                    <optgroup label="Tecnologia">
+                    <optgroup label="Tecnologia e Informática">
                         <option value="tecnico-em-desenvolvimento-de-sistemas">Técnico em Desenvolvimento de Sistemas</option>
-                        <option value="tecnico-em-informatica-(ti)">Técnico em Informática (TI)</option>
-                        <option value="tecnico-em-informatica-para-internet">Técnico em Informática para Internet</option>
+                        <option value="tecnico-em-design-de-interiores">Técnico em Design de Interiores</option>
+                        <option value="tecnico-em-redes-de-internet">Técnico em Redes de Internet</option>
                         <option value="tecnico-em-manutencao-e-suporte-em-informatica">Técnico em Manutenção e Suporte em Informática</option>
                         <option value="tecnico-em-rede-de-computadores">Técnico em Rede de Computadores</option>
                     </optgroup>
@@ -72,12 +68,20 @@
                         <option value="tecnico-em-seguranca-do-trabalho">Técnico em Segurança do Trabalho</option>
                     </optgroup>
                 </select>
-
                 <button type="submit">Entrar</button>
             </form>
         </div>
     </div>
-
     <script src="script.js"></script>
-</body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    </body>
 </html>

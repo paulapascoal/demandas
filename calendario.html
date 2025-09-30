@@ -7,7 +7,6 @@
  <link rel="stylesheet" href="style.css">
  <link rel="stylesheet" href="mediastyle.css">
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-
 </head>
 <body>
     <div class="container">
@@ -18,7 +17,7 @@
       <a href="login.html">Área do Aluno</a>
       <a href="contato.html">Contato</a>
     </nav>
-    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação">
+    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -30,14 +29,14 @@
       <table>
         <thead>
           <tr>
-            <th>Mês</th>
-            <th>Atividades</th>
-            <th>Feriados</th>
+            <th scope="col">Mês</th>
+            <th scope="col">Atividades</th>
+            <th scope="col">Feriados</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>Janeiro</td>
+            <td scope="row">Janeiro</td>
             <td>
               - Planejamento Pedagógico<br>
               - Recepção dos Estudantes<br>
@@ -46,7 +45,7 @@
             <td>01 - Ano Novo</td>
           </tr>
           <tr>
-            <td>Fevereiro</td>
+            <td scope="row">Fevereiro</td>
             <td>
               - Reunião de Pais e Mestres<br>
               - Início do Ano Letivo<br>
@@ -55,7 +54,7 @@
             <td>20 - Carnaval</td>
           </tr>
           <tr>
-            <td>Março</td>
+            <td scope="row">Março</td>
             <td>
               - Feira de Ciências<br>
               - Projetos Interdisciplinares<br>
@@ -64,7 +63,7 @@
             <td>08 - Dia Internacional da Mulher</td>
           </tr>
           <tr>
-            <td>Abril</td>
+            <td scope="row">Abril</td>
             <td>
               - Comemoração da Páscoa<br>
               - Palestra sobre Cidadania<br>
@@ -73,7 +72,7 @@
             <td>21 - Tiradentes</td>
           </tr>
           <tr>
-            <td>Maio</td>
+            <td scope="row">Maio</td>
             <td>
               - Gincana Escolar<br>
               - Homenagem ao Dia das Mães<br>
@@ -82,7 +81,7 @@
             <td>14 - Dia das Mães</td>
           </tr>
           <tr>
-            <td>Junho</td>
+            <td scope="row">Junho</td>
             <td>
               - Festa Junina<br>
               - Avaliações do Primeiro Semestre<br>
@@ -91,7 +90,7 @@
             <td>24 - Festa Junina</td>
           </tr>
           <tr>
-            <td>Julho</td>
+            <td scope="row">Julho</td>
             <td>
               - Recesso Escolar<br>
               - Capacitação de Professores
@@ -99,7 +98,7 @@
             <td>---</td>
           </tr>
           <tr>
-            <td>Agosto</td>
+            <td scope="row">Agosto</td>
             <td>
               - Semana da Família<br>
               - Reunião de Pais<br>
@@ -108,7 +107,7 @@
             <td>13 - Dia dos Pais</td>
           </tr>
           <tr>
-            <td>Setembro</td>
+            <td scope="row">Setembro</td>
             <td>
               - Semana da Pátria<br>
               - Desfile Cívico<br>
@@ -117,50 +116,50 @@
             <td>07 - Dia da Independência</td>
           </tr>
           <tr>
-            <td>Outubro</td>
+            <td scope="row">Outubro</td>
             <td>
-              - Homenagem ao Dia das Crianças<br>
-              - Feira Literária<br>
-              - Apresentações Teatrais
+              - Mês da Criança<br>
+              - Feira Cultural<br>
+              - Prova Final
             </td>
-            <td>12 - Nossa Senhora Aparecida</td>
+            <td>12 - N. S. Aparecida</td>
           </tr>
           <tr>
-            <td>Novembro</td>
+            <td scope="row">Novembro</td>
             <td>
-              - Semana da Consciência Negra<br>
-              - Feira de Profissões<br>
-              - Preparação para o Encerramento
+              - Conselho de Classe<br>
+              - Inscrições para o Próximo Ano<br>
+              - Semana da Consciência Negra
             </td>
             <td>02 - Finados<br>15 - Proclamação da República</td>
           </tr>
           <tr>
-            <td>Dezembro</td>
+            <td scope="row">Dezembro</td>
             <td>
-              - Encerramento do Ano Letivo<br>
-              - Entrega de Boletins<br>
-              - Festa de Natal
+              - Festa de Encerramento<br>
+              - Divulgação dos Resultados<br>
+              - Colação de Grau
             </td>
             <td>25 - Natal</td>
           </tr>
         </tbody>
       </table>
     </section>
-    <section id="events">
-      <h2 class="titulo">Próximos Eventos e Datas Comemorativas</h2>
+    <section class="eventos">
+      <h2 class="titulo">Eventos Especiais</h2>
       <ul>
-        <li><strong>Janeiro:</strong> Ano Novo (01/01)</li>
-        <li><strong>Fevereiro:</strong> Carnaval (20/02)</li>
-        <li><strong>Março:</strong> Feira de Ciências e Dia Internacional da Mulher (08/03)</li>
-        <li><strong>Abril:</strong> Páscoa e Tiradentes (21/04)</li>
-        <li><strong>Maio:</strong> Dia das Mães (14/05)</li>
-        <li><strong>Junho:</strong> Festa Junina (24/06)</li>
-        <li><strong>Julho:</strong> Recesso Escolar</li>
-        <li><strong>Agosto:</strong> Dia dos Pais (13/08)</li>
-        <li><strong>Setembro:</strong> Dia da Independência do Brasil (07/09)</li>
-        <li><strong>Outubro:</strong> Nossa Senhora Aparecida (12/10)</li>
-        <li><strong>Novembro:</strong> Finados (02/11) e Proclamação da República (15/11)</li>
-        <li><strong>Dezembro:</strong> Natal (25/12)</li>
+        <li>**Janeiro:** Início do Período de Matrículas (02/01)</li>
+        <li>**Fevereiro:** Início das Aulas (22/02)</li>
+        <li>**Março:** Dia Internacional da Mulher (08/03)</li>
+        <li>**Abril:** Páscoa e Tiradentes (21/04)</li>
+        <li>**Maio:** Dia das Mães (14/05)</li>
+        <li>**Junho:** Festa Junina (24/06)</li>
+        <li>**Julho:** Recesso Escolar</li>
+        <li>**Agosto:** Dia dos Pais (13/08)</li>
+        <li>**Setembro:** Dia da Independência do Brasil (07/09)</li>
+        <li>**Outubro:** Nossa Senhora Aparecida (12/10)</li>
+        <li>**Novembro:** Finados (02/11) e Proclamação da República (15/11)</li>
+        <li>**Dezembro:** Natal (25/12)</li>
       </ul>
     </section>
       <section id="contact">
@@ -168,22 +167,25 @@
       <form id="contact-form" action="/submit" method="post">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="name" required>
-
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" required>
-
         <label for="mensagem">Mensagem:</label>
         <textarea id="mensagem" name="message" rows="4" required></textarea>
-
-  <button type="submit">Enviar</button>
-</form>
+        <button type="submit">Enviar Dúvida</button>
+      </form>
     </section>
   </main>
-      <script src="script.js"></script>
-  <footer>
-    <p>&copy; 2025 Calendário Escolar. Todos os direitos reservados.</p>
-  </footer>
-   <script src="calendario.js"></script>
-</div>
+    <script src="script.js"></script>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    </div>
 </body>
 </html>

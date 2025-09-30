@@ -15,7 +15,7 @@
       <a href="contato.html">Contato</a>
       <a href="index.html" id="logoutBtn">Sair</a>
     </nav>
-    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação">
+    <button class="hamburger-menu" id="hamburger-btn" aria-label="Abrir menu de navegação" aria-expanded="false">
       <span></span>
       <span></span>
       <span></span>
@@ -23,7 +23,7 @@
   </header>
   <main class="demandas-container">
     <h2>Nova Demanda ou Sugestão</h2>
-    <div class="info-aluno">
+    <div class="info-aluno" role="status" aria-live="polite">
       <p>Bem-vindo, <span id="alunoNomeDisplay"></span>!</p>
       <p>Curso: <span id="alunoCursoDisplay"></span></p>
     </div>
@@ -38,13 +38,20 @@
       <label for="titulo">Título</label>
       <input type="text" id="titulo" name="titulo" placeholder="Ex: Goteira na sala 101" required>
       <label for="descricao">Descrição Detalhada</label>
-      <textarea id="descricao" name="descricao" placeholder="Descreva o problema ou sugestão com o máximo de detalhes possível." required></textarea>
+      <textarea id="descricao" name="descricao" placeholder="Detalhe sua demanda ou sugestão aqui." rows="6" required></textarea>
       <button type="submit">Enviar Demanda</button>
     </form>
   </main>
-  <footer>
-    <p>Grau Técnico - Todos os direitos reservados</p>
-  </footer>
   <script src="script.js"></script>
-</body>
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+    </body>
 </html>
