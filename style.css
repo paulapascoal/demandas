@@ -1,14 +1,14 @@
 @charset 'UTF-8';
-/* INÍCIO DA CORREÇÃO DE RESPONSIVIDADE */
+
 *, *::before, *::after {
   box-sizing: border-box;
 }
-/* FIM DA CORREÇÃO DE RESPONSIVIDADE */
+
 
 body {
       font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0; /* Adicionado para garantir */
+      padding: 0; 
       background: #f5f5f5;
       color: #333;
 }
@@ -173,9 +173,9 @@ nav a:hover {
       margin-bottom: 5px;
       font-weight: bold;
     }
-/* AQUI ESTÁ A CORREÇÃO PRINCIPAL DESSA TELA */
+
 .demandas-container input, .demandas-container select, .demandas-container textarea {
-      /* width: calc(100% - 20px); -- REMOVIDO */
+      
       width: 100%; 
       padding: 10px;
       margin-bottom: 20px;
@@ -227,14 +227,14 @@ nav a:hover {
         color: #333;
         width: 100%;
       }
-/* GRAÇAS AO BOX-SIZING, ESSES ELEMENTOS JÁ DEVEM SE AJUSTAR CORRETAMENTE */
+
 .login-container input, .login-container select {
          width: 100%;
         padding: 10px;
         margin-bottom: 20px;
         border: 1px solid #ccc;
         border-radius: 5px;
-        box-sizing: border-box; /* Manter se não for global */
+        box-sizing: border-box; 
       }
 .login-container button {
         width: 100%;
@@ -340,5 +340,4 @@ footer {
       text-align: center;
       padding: 15px;
       margin-top: 20px;
-}
 }
